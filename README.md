@@ -49,8 +49,10 @@ pip install customtkinter pandas openpyxl pillow
 ```
 
 ## Screenshots
+![photo_2025-03-12_17-52-12](https://github.com/user-attachments/assets/0d21d363-d23b-49a7-baab-28bf7b43a64f)
+![photo_2025-03-12_17-52-17](https://github.com/user-attachments/assets/da43233d-429b-4e4f-bd7d-76afc5540183)
+![photo_2025-03-12_17-52-22](https://github.com/user-attachments/assets/398e57a3-d327-4677-bea1-1aeba5ada4db)
 
-(You can add screenshots here)
 
 ## License
 
