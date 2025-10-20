@@ -9,15 +9,15 @@ from PIL import Image,ImageTk
 # pip install pillow
 
 customtkinter.set_appearance_mode("dark")
-# تنظیم حالت ظاهری به تیره
+
 
 customtkinter.set_default_color_theme("dark-blue")
-# تنظیم تم رنگی پیش‌فرض به dark-blue
+
 
 root = customtkinter.CTk()
 root.geometry("500x500")
 root.title("User Information Form")
-root.resizable(False, False)  # جلوگیری از تغییر سایز پنجره
+root.resizable(False, False) 
 
 
 file_path = r"D:/user_info.xlsx"
@@ -67,7 +67,7 @@ def btn_Save():
         input_Email.delete(0, END)
 
 
-        # ایجاد DataFrame جدید
+      
         df_new = pd.DataFrame({
             "First Name": (first_name,),
             "Last Name": (last_name,),
@@ -81,16 +81,15 @@ def btn_Save():
        
         
         try:
-            # تلاش برای خواندن فایل موجود
+
             df_existing = pd.read_excel(file_path, dtype=str)
             
-            # اضافه کردن داده‌های جدید به انتهای داده‌های قبلی
             df_combined = pd.concat([df_existing, df_new], ignore_index=True)
             
-            # نوشتن داده‌های ترکیب شده به فایل Excel
+         
             df_combined.to_excel(file_path, index=False)
         except FileNotFoundError:
-            # اگر فایل وجود نداشت، ایجاد فایل جدید
+         
             df_new.to_excel(file_path, index=False)
 
     messagebox.showinfo("Save successful", "The information was successfully saved.")
@@ -124,14 +123,14 @@ def search_data():
 
 
 def open_search_window():
-    # مخفی کردن فرم اصلی
+
     root.withdraw()
     
-    # ایجاد فرم جدید
+
     search_window = customtkinter.CTkToplevel(root)
     search_window.title("Search Window")
-    search_window.geometry("500x500")  # تنظیم اندازه فرم جدید مشابه فرم اصلی
-    search_window.resizable(False, False)  # جلوگیری از تغییر سایز پنجره جدید
+    search_window.geometry("500x500") 
+    search_window.resizable(False, False)
 
 
     frame_search =customtkinter.CTkFrame(master=search_window , width=320, height=400, corner_radius=15)
@@ -162,10 +161,10 @@ def open_search_window():
 
 
 
-  # تعریف تابع برای زمانی که پنجره جدید بسته می‌شود
+
     def on_closing():
-        root.deiconify()  # نمایش دوباره فرم اصلی
-        search_window.destroy()  # بستن فرم جدید
+        root.deiconify()  
+        search_window.destroy()  
 
     search_window.protocol("WM_DELETE_WINDOW", on_closing)
 
