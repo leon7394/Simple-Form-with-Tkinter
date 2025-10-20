@@ -2,11 +2,9 @@ from tkinter import *
 import tkinter.messagebox as messagebox
 import customtkinter  
 import pandas as pd
-#pip install openpyxl
 import re
-# pip install customtkinter
 from PIL import Image,ImageTk
-# pip install pillow
+
 
 customtkinter.set_appearance_mode("dark")
 
@@ -136,7 +134,7 @@ def open_search_window():
     frame_search =customtkinter.CTkFrame(master=search_window , width=320, height=400, corner_radius=15)
     frame_search.place(x=100,y=40)
 
-    title_search =customtkinter.CTkLabel(master=frame_search ,text="For the search, please enter the national ID number: ",font=("tahoma",13),text_color="#cbb5f7")
+    title_search =customtkinter.CTkLabel(master=frame_search ,text="For the search, please enter the national ID number: ",font=("tahoma",13),text_color="cbb5f7")
     title_search.place(x=10,y=15)
 
     Label_search_National_ID = customtkinter.CTkLabel(master=frame_search,width=60,text='National ID',text_color="#8e57fa")
